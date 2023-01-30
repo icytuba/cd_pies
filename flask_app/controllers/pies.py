@@ -27,7 +27,7 @@ def process_recipe():
 def edit_pie(pie_id):
     if not session['user_id']:
         return redirect('/')
-    data={'id': pie_id}
+    data={'pie_id': pie_id}
     return render_template('edit_pie.html', pie=pie.Pie.get_one_pie(data))
 
 @app.route('/edit/process/<int:pie_id>', methods=['POST'])

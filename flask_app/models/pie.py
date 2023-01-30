@@ -64,6 +64,7 @@ class Pie:
     def get_one_pie(cls, data):
         query = "SELECT * FROM pies WHERE id=%(pie_id)s;"
         result = connectToMySQL('pie_schema').query_db(query, data)
+        print(result[0])
         return result[0]
 
     @classmethod
